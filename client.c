@@ -115,7 +115,7 @@ void read_server(){
     
 
  while (1) {
-        printf("What do you want to say? ");
+        printf("YO $> ");
         bzero(buffer,256);
         scanf("%s", buffer);
 
@@ -133,7 +133,7 @@ void read_server(){
             perror("ERROR while reading from socket");
             exit(1);
         }
-        printf("server replied: %s \n", buffer);
+        printf("server &>: %s \n", buffer);
 
         // escape this loop, if the server sends message "quit"
 

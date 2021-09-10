@@ -44,7 +44,7 @@ while(1){
       n = read(ConnectFD,buffer,1);
       if (n > 0) 
       {
- printf("%d\n",ConnectFD);
+        
         printf("Request: [%s]",buffer);   
 
         switch(buffer[0]) 
@@ -58,7 +58,8 @@ while(1){
                 int size = atoi (buffer);
                 read(ConnectFD,buffer,size); //Read client
                 printf("TO: [%s], ",buffer);
-                
+                write(ConnectFD,"Mensaje Enviado...",18);
+
                 int idConnectFD = clients[buffer]; //get client of map m.find('c');  
                 printf("IDdest: [%d], ",idConnectFD); 
                 read(ConnectFD,buffer,2); //Read bits of menssagge
